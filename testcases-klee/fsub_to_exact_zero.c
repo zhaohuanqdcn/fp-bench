@@ -7,6 +7,14 @@
 
 #define FLOAT_TYPE float
 
+int __signbitf(float x) {
+  union {
+    float f;
+    uint32_t u;
+  } u = { x };
+  return (u.u >> 31) & 1;
+}
+
 int main(int argc, char** argv) {
   FLOAT_TYPE f, g;
   unsigned int choice = 0;

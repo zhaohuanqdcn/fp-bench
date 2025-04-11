@@ -16,7 +16,6 @@ int main(int argc, char** argv) {
 
 		float f, g;
 		klee_make_symbolic(&f, sizeof(f), "f");
-		f = atof(argv[1]);
 		g = f / 2;
 		g *= 2;
 		if(fabsf(f) < 2*FLT_MIN) {

@@ -10,6 +10,14 @@
 #define FLOAT_ZERO 0.0f
 #define FLOAT_SQRT_FUNC sqrtf
 
+int __signbitf(float x) {
+  union {
+    float f;
+    uint32_t u;
+  } u = { x };
+  return (u.u >> 31) & 1;
+}
+
 int main(int argc, char **argv) {
   FLOAT_TYPE x;
 
