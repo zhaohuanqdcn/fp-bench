@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include "klee/klee.h"
 
 int sink __attribute__((used)) = 0;

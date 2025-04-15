@@ -4,6 +4,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include "klee/klee.h"
 
 #define FLOAT_TYPE float
