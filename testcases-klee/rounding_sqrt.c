@@ -64,11 +64,7 @@ int main(int argc, char **argv) {
   // This value should trigger the bug and was found using
   // LibFuzzer.
   double initialValue;
-  if (argc != 2) {
-    printf("Usage: %s <float>\n", argv[0]);
-    return 1;
-  }
-  initialValue = atof(argv[1]);
+  klee_make_symbolic(&initialValue, sizeof(double), "initialValue");
   printFloat("Initial Value", initialValue);
 
   if (isnan(initialValue) || isinf(initialValue)) {
